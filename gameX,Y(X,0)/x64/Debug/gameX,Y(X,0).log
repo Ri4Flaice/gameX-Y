@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\AdreN\OneDrive\Документы\Visual Studio 2022\Project\gameX,Y(X,0)\gameX,Y(X,0)\main.cpp(17,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\AdreN\OneDrive\Документы\Visual Studio 2022\Project\gameX,Y(X,0)\gameX,Y(X,0)\main.cpp(122): warning C4715: 'checkVictory': not all control paths return a value
+  gameX,Y(X,0).vcxproj -> C:\Users\AdreN\OneDrive\Документы\Visual Studio 2022\Project\gameX,Y(X,0)\x64\Debug\gameX,Y(X,0).exe
