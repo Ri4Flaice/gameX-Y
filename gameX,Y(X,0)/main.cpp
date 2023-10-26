@@ -4,6 +4,7 @@
 using namespace std;
 
 bool checkVictory(string arr[], const short SIZE, string numberXY);
+bool checkDraw(string arr[], const short SIZE);
 void printArray(string arr[]);
 bool checkOn—orrectnessData(string symbol);
 void cellSelectionX(string arr[], const short SIZE);
@@ -41,6 +42,16 @@ void main()
 			if (checkVictory(arr, SIZE, "0") == true) {
 				cout << "œÓ·Â‰‡ 0" << endl;
 				break;
+			}
+
+			if (i == 3) {
+				if (checkDraw(arr, SIZE) == true) {
+					cout << "ÕË˜¸ˇ" << endl;
+					break;
+				}
+				else {
+					continue;
+				}
 			}
 		}
 		cout << "’ÓÚËÚÂ Ò˚„‡Ú¸ Â˘Â ‡Á? (y,n): ";
@@ -122,13 +133,35 @@ bool checkVictory(string arr[], const short SIZE, string numberXY)
 	}
 }
 
+bool checkDraw(string arr[], const short SIZE)
+{
+	for (int i = 0; i < 1; i++)
+	{
+		if (arr[0] == arr[1] and arr[2] == " ") {
+			if (arr[0] == arr[2] and arr[1] == " ") {
+				if (arr[1] == arr[2] and arr[0] == " ") {
+					return true;
+				}
+			}
+		}
+
+		if (arr[0] == arr[3] and arr[6] == " ") {
+			if (arr[0] == arr[6] and arr[3] == " ") {
+				if (arr[3] == arr[6] and arr[0] == " ") {
+					return true;
+				}
+			}
+		}
+	}
+}
+
 void printArray(string arr[])
 {
 	for (int i = 0; i < 1; i++)
 	{
 		cout << arr[0] << "|" << arr[1] << "|" << arr[2] << "\n" <<
 			arr[3] << "|" << arr[4] << "|" << arr[5] << "\n" <<
-			arr[6] << "|" << arr[7] << "|" << arr[8] << endl;
+			arr[6] << "|" << arr[7] << "|" << arr[8] << "\n";
 	}
 }
 
