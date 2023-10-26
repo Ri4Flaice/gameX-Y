@@ -3,21 +3,21 @@
 
 using namespace std;
 
-bool checkVictory(string arr[], const int SIZE, string numberXY);
+bool checkVictory(string arr[], const short SIZE, string numberXY);
 void printArray(string arr[]);
-void cellSelectionX(string arr[], const int SIZE);
-void cellSelectionY(string arr[], const int SIZE);
+void cellSelectionX(string arr[], const short SIZE);
+void cellSelectionY(string arr[], const short SIZE);
 
 // Каждая переменная эта ячейка с ее координатами на поле
-int cell11 = 11, cell12 = 12, cell13 = 13;
-int cell21 = 21, cell22 = 22, cell23 = 23;
-int cell31 = 31, cell32 = 32, cell33 = 33;
+const short CELL11 = 11, CELL12 = 12, CELL13 = 13;
+const short CELL21 = 21, CELL22 = 22, CELL23 = 23;
+const short CELL31 = 31, CELL32 = 32, CELL33 = 33;
 
 void main()
 {
 	setlocale(LC_ALL, "");
 
-	const int SIZE = 9;
+	const short SIZE = 9;
 	string arr[SIZE]{ " ", " ", " ", " ", " ", " ", " ", " ", " " };
 	string playAgain; // Хранит значение для условия повторной игры
 
@@ -58,7 +58,7 @@ void main()
 }
 
 // Проверка на победу X,Y
-bool checkVictory(string arr[], const int SIZE, string numberXY)
+bool checkVictory(string arr[], const short SIZE, string numberXY)
 {
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -132,10 +132,10 @@ void printArray(string arr[])
 }
 
 // Присваивание X к нужной ячейке
-void cellSelectionX(string arr[], const int SIZE)
+void cellSelectionX(string arr[], const short SIZE)
 {
 	string symbolVertical, symbolHorizontal, sumSymbol;
-	int cellLocation;
+	short cellLocation;
 
 	cout << "Выберите ячейку по горизонтали для x: ";
 	cin >> symbolVertical;
@@ -168,7 +168,7 @@ void cellSelectionX(string arr[], const int SIZE)
 	// Проверка ячейки на занятность по полученным координатам
 	for (int i = 0; i < 1; i++)
 	{
-		if (cellLocation == cell11) {
+		if (cellLocation == CELL11) {
 			if (arr[0] == "x" or arr[0] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -177,7 +177,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[0] = "x";
 			}
 		}
-		else if (cellLocation == cell12) {
+		else if (cellLocation == CELL12) {
 			if (arr[1] == "x" or arr[1] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -186,7 +186,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[1] = "x";
 			}
 		}
-		else if (cellLocation == cell13) {
+		else if (cellLocation == CELL13) {
 			if (arr[2] == "x" or arr[2] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -195,7 +195,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[2] = "x";
 			}
 		}
-		else if (cellLocation == cell21) {
+		else if (cellLocation == CELL21) {
 			if (arr[3] == "x" or arr[3] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -204,7 +204,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[3] = "x";
 			}
 		}
-		else if (cellLocation == cell22) {
+		else if (cellLocation == CELL22) {
 			if (arr[4] == "x" or arr[4] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -213,7 +213,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[4] = "x";
 			}
 		}
-		else if (cellLocation == cell23) {
+		else if (cellLocation == CELL23) {
 			if (arr[5] == "x" or arr[5] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -222,7 +222,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[5] = "x";
 			}
 		}
-		else if (cellLocation == cell31) {
+		else if (cellLocation == CELL31) {
 			if (arr[6] == "x" or arr[6] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -231,7 +231,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[6] = "x";
 			}
 		}
-		else if (cellLocation == cell32) {
+		else if (cellLocation == CELL32) {
 			if (arr[7] == "x" or arr[7] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -240,7 +240,7 @@ void cellSelectionX(string arr[], const int SIZE)
 				arr[7] = "x";
 			}
 		}
-		else if (cellLocation == cell33) {
+		else if (cellLocation == CELL33) {
 			if (arr[8] == "x" or arr[8] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionX(arr, SIZE);
@@ -253,10 +253,10 @@ void cellSelectionX(string arr[], const int SIZE)
 }
 
 // Присваивание Y к нужной ячейке
-void cellSelectionY(string arr[], const int SIZE)
+void cellSelectionY(string arr[], const short SIZE)
 {
 	string symbolVertical, symbolHorizontal, sumSymbol;
-	int cellLocation;
+	short cellLocation;
 
 	cout << "Выберите ячейку по вертикали для 0: ";
 	cin >> symbolVertical;
@@ -289,7 +289,7 @@ void cellSelectionY(string arr[], const int SIZE)
 	// Проверка ячейки на занятность по полученным координатам
 	for (int i = 0; i < 1; i++)
 	{
-		if (cellLocation == cell11) {
+		if (cellLocation == CELL11) {
 			if (arr[0] == "1" or arr[0] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -298,7 +298,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[0] = "0";
 			}
 		}
-		else if (cellLocation == cell12) {
+		else if (cellLocation == CELL12) {
 			if (arr[1] == "x" or arr[1] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -307,7 +307,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[1] = "0";
 			}
 		}
-		else if (cellLocation == cell13) {
+		else if (cellLocation == CELL13) {
 			if (arr[2] == "x" or arr[2] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -316,7 +316,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[2] = "0";
 			}
 		}
-		else if (cellLocation == cell21) {
+		else if (cellLocation == CELL21) {
 			if (arr[3] == "x" or arr[3] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -325,7 +325,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[3] = "0";
 			}
 		}
-		else if (cellLocation == cell22) {
+		else if (cellLocation == CELL22) {
 			if (arr[4] == "x" or arr[4] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -334,7 +334,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[4] = "0";
 			}
 		}
-		else if (cellLocation == cell23) {
+		else if (cellLocation == CELL23) {
 			if (arr[5] == "x" or arr[5] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -343,7 +343,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[5] = "0";
 			}
 		}
-		else if (cellLocation == cell31) {
+		else if (cellLocation == CELL31) {
 			if (arr[6] == "x" or arr[6] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -352,7 +352,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[6] = "0";
 			}
 		}
-		else if (cellLocation == cell32) {
+		else if (cellLocation == CELL32) {
 			if (arr[7] == "x" or arr[7] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
@@ -361,7 +361,7 @@ void cellSelectionY(string arr[], const int SIZE)
 				arr[7] = "0";
 			}
 		}
-		else if (cellLocation == cell33) {
+		else if (cellLocation == CELL33) {
 			if (arr[8] == "x" or arr[8] == "0") {
 				cout << "Данная ячейка занята: " << arr[i] << endl;
 				return cellSelectionY(arr, SIZE);
