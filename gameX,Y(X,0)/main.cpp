@@ -5,6 +5,7 @@ using namespace std;
 
 bool checkVictory(string arr[], const short SIZE, string numberXY);
 void printArray(string arr[]);
+bool checkOnСorrectnessData(string symbol);
 void cellSelectionX(string arr[], const short SIZE);
 void cellSelectionY(string arr[], const short SIZE);
 
@@ -131,6 +132,19 @@ void printArray(string arr[])
 	}
 }
 
+// Проверка на корректность ввод данных для координат
+bool checkOnСorrectnessData(string symbol)
+{
+	if (symbol != "1") {
+		if (symbol != "2") {
+			if (symbol != "3") {
+				cout << "Данные введены не корректно" << endl;
+				return false;
+			}
+		}
+	}
+}
+
 // Присваивание X к нужной ячейке
 void cellSelectionX(string arr[], const short SIZE)
 {
@@ -140,25 +154,15 @@ void cellSelectionX(string arr[], const short SIZE)
 	cout << "Выберите ячейку по горизонтали для x: ";
 	cin >> symbolVertical;
 
-	if (symbolVertical != "1") {
-		if (symbolVertical != "2") {
-			if (symbolVertical != "3") {
-				cout << "Данные введены не корректно" << endl;
-				return cellSelectionX(arr, SIZE); // Если координата выходит за рамки поля
-			}
-		}
+	if (checkOnСorrectnessData(symbolVertical) == false) {
+		return cellSelectionX(arr, SIZE);
 	}
 
 	cout << "Выберите ячейку по вертикали для x: ";
 	cin >> symbolHorizontal;
 
-	if (symbolHorizontal != "1") {
-		if (symbolHorizontal != "2") {
-			if (symbolHorizontal != "3") {
-				cout << "Данные введены не корректно" << endl;
-				return cellSelectionX(arr, SIZE); // Если координата выходит за рамки поля
-			} 
-		}
+	if (checkOnСorrectnessData(symbolHorizontal) == false) {
+		return cellSelectionX(arr, SIZE);
 	}
 
 	// Получение координаты ячейки, который ввел пользователь
@@ -261,25 +265,15 @@ void cellSelectionY(string arr[], const short SIZE)
 	cout << "Выберите ячейку по вертикали для 0: ";
 	cin >> symbolVertical;
 
-	if (symbolVertical != "1") {
-		if (symbolVertical != "2") {
-			if (symbolVertical != "3") {
-				cout << "Данные введены не корректно" << endl;
-				return cellSelectionY(arr, SIZE); // Если координата выходит за рамки поля
-			}
-		}
+	if (checkOnСorrectnessData(symbolVertical) == false) {
+		return cellSelectionY(arr, SIZE);
 	}
 
 	cout << "Выберите ячейку по горизонтали для 0: ";
 	cin >> symbolHorizontal;
 
-	if (symbolHorizontal != "1") {
-		if (symbolHorizontal != "2") {
-			if (symbolHorizontal != "3") {
-				cout << "Данные введены не корректно" << endl;
-				return cellSelectionY(arr, SIZE); // Если координата выходит за рамки поля
-			}
-		}
+	if (checkOnСorrectnessData(symbolHorizontal) == false) {
+		return cellSelectionY(arr, SIZE);
 	}
 
 	// Получение координаты ячейки, который ввел пользователь
